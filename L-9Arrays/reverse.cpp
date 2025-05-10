@@ -3,17 +3,13 @@ using namespace std;
 
 void reverse(int arr[],int size){
     int n = size;
+    int start = 0;
+    int end =n-1 ;
 
-   
-
-    for (int i = 0 ; i<n ; i++ ){
-        int temp = arr[n-i];
-            arr[n-i]=arr[i];
-            arr[i]=temp;
-            
-        
-        
-
+    while(start<=end){
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
     }
         
 }
