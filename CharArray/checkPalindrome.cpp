@@ -14,6 +14,9 @@ bool checkPalindrome(char name[],int len){
     }
     return 1;
 }
+
+
+
 int main()
 {
     char name[20];
