@@ -7,7 +7,7 @@ char getMaxOccChar(string s){
 
 int main() {
 
-   char str[100];
+    char str[100];
     cout<<"enter : ";
     cin.getline(str,100);
 
