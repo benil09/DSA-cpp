@@ -10,6 +10,18 @@ private:
     int level;
 
 public:
+
+    //parameterized constructor
+    Hero(int h, int l)
+    {
+        health = h;
+        level = l;
+    }
+
+    Hero()
+    {
+        cout << "Constructor called" << endl;
+    }
     int getHealth()
     {
         return health;
@@ -36,23 +48,25 @@ public:
 
 int main()
 {
+    cout << "Hello" << endl;
     Hero magnus;
+    cout << "hiee" << endl;
 
-    magnus.setHealth(101, 123);
-    magnus.setHealth(100, 1233);
-    magnus.setLevel(20);
-    cout << "Health: " << magnus.getHealth() << endl;
-    cout << "Level: " << magnus.getLevel() << endl;
+    // magnus.setHealth(101, 123);
+    // magnus.setHealth(100, 1233);
+    // magnus.setLevel(20);
+    // cout << "Health: " << magnus.getHealth() << endl;
+    // cout << "Level: " << magnus.getLevel() << endl;
 
-    Hero a;
-    cout << "Health: " << a.getHealth() << endl;
-    cout << "Level: " << a.getLevel() << endl;
+    // Hero a;
+    // cout << "Health: " << a.getHealth() << endl;
+    // cout << "Level: " << a.getLevel() << endl;
 
-    Hero *b = new Hero;
-    b->setHealth(12, 123);
-    b->setLevel(25);
-    cout << "Health: " << (*b).getHealth() << endl;
-    cout << "Level: " << b->getLevel() << endl;
+    // Hero *b = new Hero;
+    // b->setHealth(12, 123);
+    // b->setLevel(25);
+    // cout << "Health: " << (*b).getHealth() << endl;
+    // cout << "Level: " << b->getLevel() << endl;
 
     // cout << sizeof(h1) << endl; // 8 bytes (4 bytes for health and 4 bytes for level)
 
