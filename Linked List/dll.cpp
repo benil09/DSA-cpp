@@ -17,12 +17,50 @@ struct Node
     }
 };
 
+void print(Node *&head)
+{
+    Node *temp = head;
+    while (temp != nullptr)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+void insertAtHead(Node *&head, int data)
+{
+    Node *newNode = new Node(data);
+    Node *temp = newNode;
+    temp->next = head;
+    head->prev = newNode->next;
+    head = temp;
+}
+
+void insertAtTail(Node *&tail, int d)
+{
+    Node *newNode = new Node(d);
+    Node *temp = newNode;
+    temp->prev = tail;
+    tail->next = temp;
+    tail = temp;
+}
+
 int main()
-{   
-    Node* d1=new Node(5);
-    Node* head=d1;
-    cout<< head->data <<endl;
-    cout<< d1->data  << " " << d1->next << " " << d1->prev << " " << endl;
+{
+    Node *d1 = new Node(5);
+    Node *head = d1;
+    Node *tail = d1;
+
+    insertAtHead(head, 4);
+    insertAtHead(head, 3);
+    insertAtHead(head, 2);
+    insertAtHead(head, 1);
+
+    insertAtTail(tail, 6);
+    insertAtTail(tail, 7);
+    insertAtTail(tail, 8);
+
+    print(head);
 
     return 0;
 }

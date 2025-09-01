@@ -12,6 +12,16 @@ public:
         this->data = data;
         this->next = nullptr;
     }
+
+    ~Node(){
+        int value = this->data;
+        //memory free
+        if(this->next != nullptr){
+            delete next;
+            this->next=nullptr;
+        }
+        cout<<" memory is free for node with data : " << value << endl;
+    }
 };
 
 void insertAtTop(Node* &head,int data){
@@ -31,6 +41,19 @@ void print(Node* head){
         cout << temp->data << " ";
         temp = temp->next;
     }
+}
+
+void deleteNode(Node* &head,int pos){
+    //delete first node
+    if(pos==1){
+        Node* temp=head;
+        head=head->next;
+        delete temp;
+    }else{
+        //delete last of middle node
+
+    }
+
 }
 
 int main()
@@ -54,6 +77,7 @@ int main()
     tail->next=n5;
     tail=n5;
    
+    deleteNode(head,1);
     
     print(head);
     return 0;
