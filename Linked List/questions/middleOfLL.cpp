@@ -14,6 +14,8 @@ struct Node
 };
 
 int length(Node *&head)
+
+
 {
     Node *curr = head;
     int cnt = 0;
@@ -25,6 +27,7 @@ int length(Node *&head)
 
     return cnt;
 }
+
 
 int main()
 {
@@ -40,12 +43,19 @@ int main()
 
     int n = length(head);
     cout << "The length of the linked list is : " << n << endl;
+    int ans =n/2  ;
+    cout << "the middle index is : " << ans<<endl;
 
-    cout << "the middle index is : " << (length(head) / 2) + 1;
+    Node *temp = head;
 
-   
+    int cnt = 0;
+    while (cnt < ans)
+    {
+        temp = temp->next;
+        cnt++;
+    }
 
-    
+    cout<< " The middle element of the list is : "<< temp->data<<endl;
 
     return 0;
 }
