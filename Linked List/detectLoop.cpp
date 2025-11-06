@@ -36,27 +36,47 @@ bool detectCycle(Node *head)
     return false;
 }
 
-Node* floydCycleDetectAlgo(Node* head){
-    if(head == NULL) return NULL;
+Node *floydCycleDetectAlgo(Node *head)
+{
+    if (head == NULL)
+        return NULL;
 
-    Node* slow = head;
-    Node* fast = head;
+    Node *slow = head;
+    Node *fast = head;
 
-   while(fast != NULL && fast->next!=NULL) {
-    fast=fast->next;
-    if(fast != NULL){
-        fast=fast->next;
+    while (fast != NULL && fast->next != NULL)
+    {
+        fast = fast->next;
+        if (fast != NULL)
+        {
+            fast = fast->next;
+        }
+        slow = slow->next;
+
+        if (slow == fast)
+        {
+            return slow;
+        }
     }
-    slow=slow->next;
 
-    if(slow == fast){
-        return slow;
+    return NULL;
+}
+
+Node *getStartNode(Node *head)
+{
+    if (head == NULL)
+    {
+        return NULL;
     }
 
-   }
-
-   return NULL;
-
+    Node *intersection = floydCycleDetectAlgo(head);
+    Node *slow = head;
+    while (slow != intersection)
+    {
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
 }
 
 int main()
