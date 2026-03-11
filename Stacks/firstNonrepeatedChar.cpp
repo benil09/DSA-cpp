@@ -2,9 +2,7 @@
 using namespace std;
 
 int main() {
-    cout << "hello world";
-    cout<<"Nilkamal";
-    cout<<"how are yo";
+  string str = {}
     
     return 0;
 }

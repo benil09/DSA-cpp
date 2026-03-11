@@ -1,33 +1,32 @@
 #include <iostream>
-#include <vector>
 using namespace std;
+#include <vector>
 
 int main() {
-    vector<int> arr = {0,1,2,0,1,2};
-      int zero=0;
-        int one =0;
-        int two = 0;
-       for(int i=0;i<arr.size();i++){
-           if(arr[i] == 0){
-               zero++;
-           }
-           else if(arr[i] == 1){
-               one++;
-           }else{
-               two++;
-           }
-       }
+    int arr[6]={-3 , -2,-1,0,2,3};
+    int n = 6;
+   vector <int> res;
 
-       int index=0;
-       for(int i=0;i<zero;i++) arr[index++]=0;
-       for(int i=0;i<one;i++) arr[index++]=1;
-       for(int i=0;i<two;i++) arr[index++]=2;
+    int i = 0 ,j=0;
 
-       for(int ans:arr){
-        cout<<ans;
-       }
-       cout<<endl;
+    for (int i =0 ;i<n-1;i++){
+        if(arr[i]>=0){
+            break;
+        }else{
+            j++;
+        }
+    }
 
-       
+    int temp = j;
+         while(i < temp && j < n-1){
+            if(arr[i]*arr[i] > arr[j]*arr[j] ){
+                res.push_back(arr[j]*arr[j]);
+                j++;
+
+            }else{
+              res.push_back(arr[i]*arr[i]);
+              i++;
+            }
+         }
     return 0;
 }
