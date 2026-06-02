@@ -3,7 +3,10 @@ using namespace std;
 
 int main() {
 
-   vector<int> cmd ={4,-1,3};
+   vector<int> cmd ={4,-1,4,-2,4};
+   vector<vector<int>> obstacles = {{2,4}}
+   set<pair<int,int>>obsSet = obstacles;
+
 
    int Xc = 0 ;
    int Yc = 0 ;
@@ -17,11 +20,17 @@ int main() {
             dir = (dir + 3) % 4; // turn left
         }else{
              int steps = cmd[i];
-            while (steps--) {
+             while (steps--) {
+                int nextXc= Xc;
+                int nextYc= Yc;
+
                 if (dir == 0) Yc++;
                 else if (dir == 1) Xc++;
                 else if (dir == 2) Yc--;
                 else if (dir == 3) Xc--;
+
+                //check obstacles
+                if()
             }
         }
    }
